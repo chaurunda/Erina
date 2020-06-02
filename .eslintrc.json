@@ -1,0 +1,19 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2019
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "indent": ["error", "tab"],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "prettier/prettier": "warn",
+    "no-console": ["error", { "allow": ["warn", "error"] }]
+  }
+}

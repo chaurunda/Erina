@@ -5,7 +5,8 @@
   "license": "Apache",
   "languageName": "node",
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.2.0",
+    "eslint": "^7.1.0"
   },
   "scripts": {
     "start": "node index.js"
