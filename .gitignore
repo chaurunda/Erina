@@ -35,3 +35,6 @@ jspm_packages/
 
 .yarn/cache
 .yarn/install-state.gz
+
+
+config.json
