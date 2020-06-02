@@ -1,0 +1,13 @@
+{
+  "extends": ["config:base"],
+  "automerge": true,
+  "major": {
+    "automerge": false
+  },
+  "automergeType": "branch",
+  "rangeStrategy": "auto",
+  "rebaseStalePrs": false,
+  "assignees": ["arnaudhuc"],
+  "labels": ["AutoUpdate"],
+  "requiredStatusChecks": null
+}
