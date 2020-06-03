@@ -1,4 +1,7 @@
 {
   "token": "",
-  "messageId": ""
+  "messageId": "",
+  "prefix": "",
+  "ownerID": "your-user-ID",
+  "starboardChannelId": "your-starboard-channel-ID"
 }
