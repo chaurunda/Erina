@@ -1,6 +1,5 @@
 const fs = require('fs')
-const util = require('util')
-const { Client, Permissions, Collection } = require('discord.js')
+const { Client, Collection } = require('discord.js')
 const { prefix, token } = require('./config.json')
 
 const client = new Client()
