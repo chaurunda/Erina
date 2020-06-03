@@ -1,9 +1,10 @@
 const fs = require('fs')
-const Discord = require('discord.js')
+const util = require('util')
+const { Client, Permissions, Collection } = require('discord.js')
 const { prefix, token } = require('./config.json')
 
-const client = new Discord.Client()
-client.commands = new Discord.Collection()
+const client = new Client()
+client.commands = new Collection()
 
 const commandFiles = fs
 	.readdirSync('./commands')
@@ -14,7 +15,7 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command)
 }
 
-const cooldowns = new Discord.Collection()
+const cooldowns = new Collection()
 
 client.once('ready', () => {
 	console.log('Ready!')
@@ -48,8 +49,22 @@ client.on('message', (message) => {
 		return message.channel.send(reply)
 	}
 
+	if (command.permission) {
+		if (
+			!message.member.hasPermission([
+				'KICK_MEMBERS',
+				'BAN_MEMBERS',
+				'MANAGE_MESSAGES',
+			])
+		) {
+			return message.channel.send(
+				"Tu n'as pas les droits suffisant pour effectuer cette commande",
+			)
+		}
+	}
+
 	if (!cooldowns.has(command.name)) {
-		cooldowns.set(command.name, new Discord.Collection())
+		cooldowns.set(command.name, new Collection())
 	}
 
 	const now = Date.now()
