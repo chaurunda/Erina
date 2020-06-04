@@ -12,9 +12,9 @@
     "start": "node index.js"
   },
   "devDependencies": {
-    "@types/node": "^14.0.9",
-    "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4",
-    "typescript": "^3.9.3"
+    "@types/node": "14.0.9",
+    "concurrently": "5.2.0",
+    "nodemon": "2.0.4",
+    "typescript": "3.9.3"
   }
 }
