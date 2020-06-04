@@ -31,22 +31,25 @@ This is how a command is written
 - args?: true
 - aliases?: Array<string>
 - cooldown?: Integer
+- guildOnly: boolean
 - execute(message, args){}
 
 Explanation
 
-Name is the name of your command : help, kick, my-permission, ...
+_name_ is the name of your command : help, kick, my-permission, ...
 
-Description is the description for the help
+_description_ is the description for the help
 
-Permission (optional) is a boolean. If set to true, you must have permission to kick, ban, manage message to run this command
+_permission_ (optional) is a boolean. If set to true, you must have permission to kick, ban, manage message to run this command
 
-Usage (optional) is a description of how to use the command
+_usage_ (optional) is a description of how to use the command
 
-Args (optional) is a boolean. If set to true, the command must have an arg to run : kick
+_args_ (optional) is a boolean. If set to true, the command must have an arg to run : kick
 
-Aliases is an array of strings. It's a list of alias for your command : avatar
+_aliases_ is an array of strings. It's a list of alias for your command : avatar
 
-Cooldown is a number (in sec) for preventing spam. It set to 3 secondes by default
+_cooldown_ is a number (in sec) for preventing spam. It set to 3 secondes by default
 
-Execute is where the magic happen ...
+_guildOnly_ is a boolean. If true the command must be send on a channel and not in DM
+
+_execute_ is where the magic happen ...
