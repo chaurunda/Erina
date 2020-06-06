@@ -20,16 +20,12 @@ for (const file of commandFiles) {
 const cooldowns = new Collection()
 
 client.once('ready', () => {
-	console.log('Ready!')
+	client.user.setActivity("!help pour avoir de l'aide")
 })
 
 client.on('message', (message) => {
 	onMessage.execute(message, prefix, client, cooldowns)
 })
-
-// client.user.setActivity("!help pour avoir de l'aide")
-
-console.log(client.user)
 
 client.on('messageReactionAdd', async (reaction, user) => {
 	if (!user) return
