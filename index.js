@@ -3,7 +3,9 @@ const { Client, Collection } = require('discord.js')
 const { prefix, token, messageId, availableRoles } = require('./config.json')
 const onMessage = require('./events/onMessage')
 
-const client = new Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] })
+const client = new Client({
+	partials: ['USER', 'MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER'],
+})
 client.commands = new Collection()
 
 const commandFiles = fs
