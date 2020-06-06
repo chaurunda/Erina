@@ -27,7 +27,9 @@ client.on('message', (message) => {
 	onMessage.execute(message, prefix, client, cooldowns)
 })
 
-client.user.setActivity("!help pour avoir de l'aide")
+// client.user.setActivity("!help pour avoir de l'aide")
+
+console.log(client.user)
 
 client.on('messageReactionAdd', async (reaction, user) => {
 	if (!user) return
