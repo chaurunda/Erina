@@ -1,7 +1,8 @@
 module.exports = {
 	name: 'reload',
-	description: 'Reloads a command',
+	description: 'Relance une commande',
 	args: true,
+	permission: true,
 	execute(message, args) {
 		const commandName = args[0].toLowerCase()
 		const command =
@@ -12,7 +13,7 @@ module.exports = {
 
 		if (!command) {
 			return message.channel.send(
-				`There is no command with name or alias \`${commandName}\`, ${message.author}!`,
+				`Il n'y a aucune commande \`${commandName}\`, ${message.author}!`,
 			)
 		}
 
@@ -21,11 +22,11 @@ module.exports = {
 		try {
 			const newCommand = require(`./${command.name}.js`)
 			message.client.commands.set(newCommand.name, newCommand)
-			message.channel.send(`Command \`${command.name}\` was reloaded!`)
+			message.channel.send(`Le commande \`${command.name}\` a été relancée!`)
 		} catch (error) {
 			console.log(error)
 			message.channel.send(
-				`There was an error while reloading a command \`${command.name}\`:\n\`${error.message}\``,
+				`Il y a eu un soucis en voulant recharger \`${command.name}\`:\n\`${error.message}\``,
 			)
 		}
 	},

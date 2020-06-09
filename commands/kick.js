@@ -1,16 +1,18 @@
 module.exports = {
 	name: 'kick',
-	description: 'Tag a member and kick them (but not really).',
+	description: 'Tag un membre et kick le (enfin presque).',
 	usage: '<user>',
 	guildOnly: true,
 	permission: true,
 	execute(message) {
 		if (!message.mentions.users.size) {
-			return message.reply('you need to tag a user in order to kick them!')
+			return message.reply(
+				'Tu dois taguer un utilisateur pour pouvoir le kick!',
+			)
 		}
 
 		const taggedUser = message.mentions.users.first()
 
-		message.channel.send(`You wanted to kick: ${taggedUser.username}`)
+		message.channel.send(`Tu veux kick: ${taggedUser.username}`)
 	},
 }

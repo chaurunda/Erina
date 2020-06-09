@@ -3,7 +3,7 @@ module.exports = {
 	description: 'Send user info',
 	execute(message, args) {
 		message.channel.send(
-			`Your username: ${message.author.username}\nYour ID: ${message.author.id}`,
+			`Ton nom: ${message.author.username}\nTon ID: ${message.author.id}`,
 		)
 	},
 }

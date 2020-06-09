@@ -2,6 +2,25 @@
 
 A discord bot waifu that add role on reaction and give you many little command
 
+## Installation
+
+To install follow the steps :
+
+Run `npm ci`
+
+Run `cp config.json.dist config.json`
+
+Open config.json and fill it
+
+`
+{
+  "token": "", // token of your bot
+  "messageId": "", // the message ID where the reactions are
+  "prefix": "", // The prefix pour commandes
+  "availableRoles": [""] // The names of emojis the users have to click to get a role with the same name. ex : :rose: will set to the user a role named rose (must be already created onto your server)
+}
+`
+
 ## Commands
 
 List of commands:

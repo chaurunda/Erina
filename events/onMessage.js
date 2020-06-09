@@ -15,14 +15,16 @@ module.exports = {
 		if (!command) return
 
 		if (command.guildOnly && message.channel.type !== 'text') {
-			return message.reply("I can't execute that command inside DMs!")
+			return message.reply(
+				'Je ne peux pas executer cette commande en message privés',
+			)
 		}
 
 		if (command.args && !args.length) {
-			let reply = `You didn't provide any arguments, ${message.author}!`
+			let reply = `Il manque des arguments à ta commande, ${message.author}!`
 
 			if (command.usage) {
-				reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``
+				reply += `\nVoici comment utiliser la commande: \`${prefix}${command.name} ${command.usage}\``
 			}
 
 			return message.channel.send(reply)
@@ -56,9 +58,9 @@ module.exports = {
 			if (now < expirationTime) {
 				const timeLeft = (expirationTime - now) / 1000
 				return message.reply(
-					`please wait ${timeLeft.toFixed(
+					`S'il te plait patiente ${timeLeft.toFixed(
 						1,
-					)} more second(s) before reusing the \`${command.name}\` command.`,
+					)} seconde(s) avant de réutiliser  \`${command.name}\`.`,
 				)
 			}
 		}
@@ -70,7 +72,7 @@ module.exports = {
 			command.execute(message, args)
 		} catch (error) {
 			console.error(error)
-			message.reply('there was an error trying to execute that command!')
+			message.reply('Il y a eu un soucis en voulant executer cette commande	')
 		}
 	},
 }
