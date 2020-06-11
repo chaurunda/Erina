@@ -4,6 +4,10 @@
   "main": "index.js",
   "license": "Apache",
   "languageName": "node",
+  "author": {
+    "email": "arnaud.huc.rpo@gmail.com",
+    "name": "Arnaud Huc"
+  },
   "dependencies": {
     "discord.js": "^12.2.0",
     "eslint": "^7.1.0"
