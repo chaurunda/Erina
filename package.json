@@ -16,7 +16,7 @@
     "start": "node index.js"
   },
   "devDependencies": {
-    "@types/node": "14.0.20",
+    "@types/node": "14.0.21",
     "concurrently": "5.2.0",
     "nodemon": "2.0.4",
     "typescript": "3.9.6"
