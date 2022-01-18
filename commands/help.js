@@ -22,14 +22,18 @@ module.exports = {
 				.send(data, { split: true })
 				.then(() => {
 					if (message.channel.type === 'dm') return
-					message.reply("I've sent you a DM with all my commands!")
+					message.reply(
+						"Je t'ai envoyé un message privé avec toutes mes commandes!",
+					)
 				})
 				.catch((error) => {
 					console.error(
 						`Could not send help DM to ${message.author.tag}.\n`,
 						error,
 					)
-					message.reply("it seems like I can't DM you!")
+					message.reply(
+						"J'ai l'impression que je ne peux pas t'envoyer de message privé...",
+					)
 				})
 		}
 
@@ -39,7 +43,7 @@ module.exports = {
 			commands.find((c) => c.aliases && c.aliases.includes(name))
 
 		if (!command) {
-			return message.reply("that's not a valid command!")
+			return message.reply("Ce n'est pas une commande valide!")
 		}
 
 		data.push(`**Name:** ${command.name}`)
