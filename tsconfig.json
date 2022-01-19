@@ -1,0 +1,24 @@
+{
+	"ts-node": {
+		"cwd": "/Users/spraypaint/Sites/app/Erina",
+		"projectSearchDir": "/Users/spraypaint/Sites/app/Erina",
+		"require": []
+	},
+	"compilerOptions": {
+		"lib": ["es2021"],
+		"module": "commonjs",
+		"target": "es2021",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"types": ["node"],
+		"sourceMap": true,
+		"inlineSourceMap": false,
+		"inlineSources": true,
+		"declaration": false,
+		"noEmit": false,
+		"outDir": "./.ts-node",
+		"resolveJsonModule": true
+	}
+}
