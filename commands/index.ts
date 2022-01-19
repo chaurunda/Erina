@@ -1,12 +1,7 @@
-import { ApplicationCommandDataResolvable, Message } from 'discord.js'
-// https://discordjs.guide/interactions/registering-slash-commands.html#choices
-// TODO
-type ExecuteFn = () => void
+import avatar from './avatar'
+import blague from './blague'
+import loli from './loli'
+import server from './server'
+import info from './userInfo'
 
-export const createCommand = (
-	execute: ExecuteFn,
-	command: ApplicationCommandDataResolvable,
-) => ({
-	execute,
-	command,
-})
+export const commands = [avatar, blague, loli, info, server]
