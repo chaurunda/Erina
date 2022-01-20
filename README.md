@@ -2,7 +2,9 @@
 
 A discord bot waifu that add role on reaction and give you many little command
 
-## Installation
+## Requirement & Installation
+
+It require the v16.13.2 of node (or use `nvm use`)
 
 To install follow the steps :
 
