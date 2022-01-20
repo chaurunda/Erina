@@ -27,15 +27,11 @@ and run `npm install`
 
 List of commands:
 
-- !prune <number> : remove the last any messages as the number you want
-- !help : display all the commands available.
-- !help <command> : display all the infos of a command
-- !reload <command> : reload a command
-- !server : display some server info
-- !userInfo : display user info
-- !avatar : display the link of yout avatar
-- !avatar <user> : display the link of the user
-- !my-permission : display all of the permissions you have on the server
+- /server : display some server info
+- /userInfo : display user info
+- /avatar : display the link of yout avatar
+- /blague : display a joke and is answer (in frenc)
+- /uwu : UwU
 
 ## How to
 
@@ -43,34 +39,34 @@ List of how to :
 
 ### Commands
 
-This is how a command is written
+This is how a to create a command :
 
-- name: String
-- description: String
-- permission?: Boolean
-- usage?: String
-- args?: true
-- aliases?: Array<string>
-- cooldown?: Integer
-- guildOnly: boolean
-- execute(message, args){}
+Create a file in ./commands
 
-Explanation
+In this file put the following code
 
-_name_ is the name of your command : help, kick, my-permission, ...
+```
+import { customCommand } from '../utils/createCommand'
 
-_description_ is the description for the help
+export default customCommand(
+  () => {
+    return ''
+  },
+  {
+    name: '',
+    description: '',
+  }
+)
+```
 
-_permission_ (optional) is a boolean. If set to true, you must have permission to kick, ban, manage message to run this command
+The first method is what the bot is reply when you ask your command. It must be a string.
 
-_usage_ (optional) is a description of how to use the command
+The second object is the name and a little description. It will be display when you type /<name> in chat
 
-_args_ (optional) is a boolean. If set to true, the command must have an arg to run : kick
+Then you have to import it in ./commands/index.ts and add it into the commands array.
 
-_aliases_ is an array of strings. It's a list of alias for your command : avatar
+Source :
 
-_cooldown_ is a number (in sec) for preventing spam. It set to 3 secondes by default
+DiscordJS Doc : https://discord.js.org/#/docs/discord.js/stable/general/welcome
 
-_guildOnly_ is a boolean. If true the command must be send on a channel and not in DM
-
-_execute_ is where the magic happen ...
+DiscordJS Guide : https://discordjs.guide/#before-you-begin
