@@ -27,6 +27,7 @@ client.once('ready', async () => {
 
   for (const { execute, command } of commands) {
     client.application?.commands.create(command)
+    console.log(command.name)
     executeList[command.name] = execute
   }
 
@@ -51,7 +52,7 @@ client.on('interactionCreate', async (interaction) => {
       return
     })
   } else if (interaction.commandName === 'chaton') {
-    interaction.reply(executeList[interaction.commandName](interaction).toString())
+    interaction.reply(await executeList[interaction.commandName](interaction))
   } else {
     await interaction.reply(executeList[interaction.commandName](interaction).toString())
   }
