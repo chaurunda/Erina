@@ -7,7 +7,7 @@ export default customCommand(
   async (interaction) => {
     try {
       const fetchCat = async () => {
-        const response = await axios('https://api.thecatapi.com/v1/images/search?mime_types=gif').catch((e) => {
+        const response = await axios('https://api.thedogapi.com/v1/images/search?mime_types=gif').catch((e) => {
           throw new Error('An error occur')
         })
         return response.data as Cat[]
@@ -21,7 +21,7 @@ export default customCommand(
     }
   },
   {
-    name: 'chaton',
-    description: 'Nya ?!',
+    name: 'doggo',
+    description: 'Woof !',
   }
 )

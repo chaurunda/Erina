@@ -51,7 +51,7 @@ client.on('interactionCreate', async (interaction) => {
       await interaction.reply(`${blague.joke}\n${blague.answer}`)
       return
     })
-  } else if (interaction.commandName === 'chaton') {
+  } else if (interaction.commandName === 'chaton' || interaction.commandName === 'doggo') {
     interaction.reply(await executeList[interaction.commandName](interaction))
   } else {
     await interaction.reply(executeList[interaction.commandName](interaction).toString())
