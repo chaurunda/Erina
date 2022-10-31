@@ -16,7 +16,8 @@
     "reflect-metadata": "^0.1.13"
   },
   "scripts": {
-    "start": "ts-node --project tsconfig.json index.ts"
+    "start": "ts-node --project tsconfig.json index.ts",
+    "phoenix": "rm -rf ./node_modules && npm install"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "3.4.0",
