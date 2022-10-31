@@ -8,7 +8,7 @@ export default customCommand(
       return 'Vous devez mentionner un utilisateur'
     }
 
-    return user.displayAvatarURL({ format: 'png' })
+    return user.displayAvatarURL({ extension: 'png' })
   },
   {
     name: 'avatar',

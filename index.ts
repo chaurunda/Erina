@@ -1,5 +1,5 @@
 import BlaguesAPI from 'blagues-api'
-import { Client, Intents } from 'discord.js'
+import { ActivityType, Client, GatewayIntentBits, Partials } from 'discord.js'
 
 import { commands } from './commands'
 import { blagueToken } from './config.json'
@@ -8,12 +8,12 @@ import { ExecuteFn } from './utils/createCommand'
 import { setUserRole } from './utils/setUserRole'
 
 const client = new Client({
-  partials: ['USER', 'MESSAGE', 'CHANNEL', 'REACTION', 'GUILD_MEMBER'],
+  partials: [Partials.User, Partials.Message, Partials.Channel, Partials.Reaction, Partials.GuildMember],
   intents: [
-    Intents.FLAGS.GUILDS,
-    Intents.FLAGS.GUILD_MESSAGES,
-    Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
-    Intents.FLAGS.DIRECT_MESSAGES,
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMessageReactions,
+    GatewayIntentBits.DirectMessages,
   ],
 })
 
@@ -26,12 +26,12 @@ client.once('ready', async () => {
   console.log('Ready!')
 
   for (const { execute, command } of commands) {
-    client.application?.commands.create(command)
-    console.log(command.name)
-    executeList[command.name] = execute
+    client.application?.commands.create(command).then((result) => {
+      executeList[result.name] = execute
+    })
   }
 
-  client.user?.setActivity("/help pour avoir de l'aide", { type: 'LISTENING' })
+  client.user?.setActivity("/help pour avoir de l'aide", { type: ActivityType.Listening })
 })
 
 client.on('messageReactionAdd', addRole)
