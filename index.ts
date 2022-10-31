@@ -1,5 +1,5 @@
 import BlaguesAPI from 'blagues-api'
-import { ActivityType, Client, GatewayIntentBits, Partials } from 'discord.js'
+import { ActivityType, Client, Events, GatewayIntentBits, Partials } from 'discord.js'
 
 import { commands } from './commands'
 import { blagueToken } from './config.json'
@@ -22,7 +22,7 @@ const addRole = setUserRole('add')
 const removeRole = setUserRole('remove')
 const blagues = new BlaguesAPI(blagueToken)
 
-client.once('ready', async () => {
+client.once(Events.ClientReady, async () => {
   console.log('Ready!')
 
   for (const { execute, command } of commands) {
@@ -34,11 +34,11 @@ client.once('ready', async () => {
   client.user?.setActivity("/help pour avoir de l'aide", { type: ActivityType.Listening })
 })
 
-client.on('messageReactionAdd', addRole)
+client.on(Events.MessageReactionAdd, addRole)
 
-client.on('messageReactionRemove', removeRole)
+client.on(Events.MessageReactionRemove, removeRole)
 
-client.on('interactionCreate', async (interaction) => {
+client.on(Events.InteractionCreate, async (interaction) => {
   if (!interaction.isCommand()) return
 
   console.log(executeList)
