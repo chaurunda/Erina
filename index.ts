@@ -26,9 +26,9 @@ client.once('ready', async () => {
   console.log('Ready!')
 
   for (const { execute, command } of commands) {
-    client.application?.commands.create(command).then((result) => {
-      executeList[result.name] = execute
-    })
+    client.application?.commands.create(command)
+
+    executeList[command.name] = execute
   }
 
   client.user?.setActivity("/help pour avoir de l'aide", { type: ActivityType.Listening })
@@ -41,6 +41,7 @@ client.on('messageReactionRemove', removeRole)
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isCommand()) return
 
+  console.log(executeList)
   if (interaction.commandName === 'blague') {
     async function getBlague() {
       return await blagues.random({

@@ -9,7 +9,7 @@
     "name": "Arnaud Huc"
   },
   "dependencies": {
-    "axios": "^0.27.0",
+    "axios": "^1.0.0",
     "blagues-api": "^2.1.0",
     "cz-customizable": "^7.0.0",
     "discord.js": "^14.0.0",
