@@ -25,9 +25,10 @@ const blagues = new BlaguesAPI(blagueToken)
 client.once(Events.ClientReady, async () => {
   console.log('Ready!')
 
-  for (const { execute, command } of commands) {
-    client.application?.commands.create(command)
+  client.application?.commands.set([]) // Delete all the previous existing commands
 
+  for (const { execute, command } of commands) {
+    client.application?.commands.create(command) // Create command
     executeList[command.name] = execute
   }
 
