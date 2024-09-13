@@ -21,7 +21,7 @@
     "phoenix": "rm -rf ./node_modules && npm install"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "4.1.1",
+    "@trivago/prettier-plugin-sort-imports": "4.3.0",
     "@types/node": "18.19.50",
     "concurrently": "7.6.0",
     "cz-conventional-changelog": "^3.3.0",
