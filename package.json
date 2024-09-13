@@ -23,7 +23,7 @@
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.3.0",
     "@types/node": "18.19.50",
-    "concurrently": "7.6.0",
+    "concurrently": "9.0.1",
     "cz-conventional-changelog": "^3.3.0",
     "nodemon": "3.1.4",
     "ts-node": "10.9.1",
