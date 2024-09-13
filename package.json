@@ -14,7 +14,7 @@
     "cz-customizable": "^7.0.0",
     "discord.js": "^14.0.0",
     "eslint": "^8.0.0",
-    "reflect-metadata": "^0.1.13"
+    "reflect-metadata": "^0.2.0"
   },
   "scripts": {
     "start": "ts-node --project tsconfig.json index.ts",
