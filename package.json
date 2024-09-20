@@ -25,7 +25,7 @@
     "@types/node": "18.19.50",
     "concurrently": "7.6.0",
     "cz-conventional-changelog": "^3.3.0",
-    "nodemon": "3.1.4",
+    "nodemon": "3.1.7",
     "ts-node": "10.9.1",
     "tslib": "2.7.0",
     "typescript": "5.6.2"
